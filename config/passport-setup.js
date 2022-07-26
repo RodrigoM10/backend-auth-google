@@ -17,8 +17,8 @@ passport.use(
     new GoogleStrategy(
         {
             // options for google strategy
-            clientID: '507507858685-jd0761nbatdklm9depcr5q20kkc2gln8.apps.googleusercontent.com',
-            clientSecret: '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',
+            clientID: process.env.CLIENT_ID,
+            clientSecret: process.env.CLIENT_SECRET,
             callbackURL: '/auth/google/redirect',
         },
         (accessToken, refreshToken, profile, done) => {
