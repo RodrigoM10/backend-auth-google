@@ -63,6 +63,9 @@ app.use((error, req, res, next) => {
     });
 });
 
-app.listen(process.env.PORT || 4000, () => {
-    console.log('Servidor Funcionando');
+// app.listen(process.env.PORT || 4000, () => {
+//     console.log('Servidor Funcionando');
+// });
+app.listen(process.env.PORT || 4000, function () {
+    console.log('Servidor Funcionando', this.address().port, app.settings.env);
 });
