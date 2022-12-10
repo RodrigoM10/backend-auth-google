@@ -21,7 +21,13 @@ app.use(cors());
 app.use(morgan('dev'));
 
 // initialize passport
-app.use(session({ secret: process.env.SECRET })); // session secret
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: true,
+        saveUninitialized: true,
+    })
+); // session secret
 app.use(passport.initialize());
 app.use(passport.session());
 

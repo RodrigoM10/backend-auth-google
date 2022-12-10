@@ -10,9 +10,6 @@ const userSchema = mongoose.Schema({
         type: String,
         match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
     },
-    petitions: {
-        type: Array,
-    },
     register: {
         type: Date,
         default: Date.now(),
