@@ -42,6 +42,7 @@ exports.login = async (req, res) => {
         const { email, password } = req.body;
 
         const user = await User.findOne({ email });
+
         if (!user) {
             return res.status(400).json('usuario no existe');
         }
@@ -56,6 +57,7 @@ exports.login = async (req, res) => {
                 id: user.id,
             },
         };
+
         jwt.sign(
             payload,
             process.env.SECRET,

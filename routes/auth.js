@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 const express = require('express');
 const mongoose = require('mongoose');
-
 const passport = require('passport');
 
 const router = express.Router();
@@ -10,6 +9,8 @@ router.get(
     '/google',
     passport.authenticate('google', {
         scope: ['profile', 'email'],
+        accessType: 'offline',
+        prompt: 'consent',
     })
 );
 

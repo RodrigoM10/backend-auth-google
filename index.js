@@ -60,7 +60,7 @@ app.use((req, res, next) => {
     next(error);
 });
 
-app.use((error, req, res, next) => {
+app.use((error, res) => {
     res.status(error.status || 500);
     res.json({
         error: {
@@ -69,9 +69,6 @@ app.use((error, req, res, next) => {
     });
 });
 
-// app.listen(process.env.PORT || 4000, () => {
-//     console.log('Servidor Funcionando');
-// });
 app.listen(process.env.PORT || 4000, function () {
     console.log('Servidor Funcionando', this.address().port, app.settings.env);
 });

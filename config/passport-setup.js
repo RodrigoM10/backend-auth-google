@@ -2,6 +2,8 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../models/User');
 const mongoose = require('mongoose');
+const JWT = 'jsonwebtoken';
+const jwt = require(JWT);
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
